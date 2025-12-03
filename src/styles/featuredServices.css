@@ -1,0 +1,234 @@
+/* ============================= */
+/* Featured Services Section */
+/* ============================= */
+
+
+
+
+/* ✨ FEATURED SECTION – Charcoal luxury gradient + gold sparkle */
+.featured-section {
+  background: linear-gradient(135deg, #0a0a0a 0%, #141414 100%);
+  position: relative;
+  color: white;
+}
+
+.featured-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 70%, rgba(255,215,0,0.05), transparent 70%);
+  pointer-events: none;
+}
+
+/* Sparkle overlay for moving gold shimmer */
+.featured-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://www.transparenttextures.com/patterns/golden-fabric.png");
+  opacity: 0.025;
+  animation: shimmerMove 25s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmerMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 1000px; }
+}
+
+
+/* Section Title */
+.featured-heading {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  text-align: center;
+  background: linear-gradient(90deg, #f9e8a3, #f5c86b, #d89b28);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ----------------------------------------- */
+/* Premium Heading Animation & Underline */
+/* ----------------------------------------- */
+
+.premium-heading {
+  position: relative;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  text-align: center;
+  background: linear-gradient(90deg, #f8e7b1, #d4af37, #b8860b, #f8e7b1);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShine 6s ease-in-out infinite;
+  letter-spacing: 1px;
+}
+
+.premium-heading span {
+  font-weight: 700;
+  color: #fff;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Shimmer animation for heading */
+@keyframes textShine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glowing underline below heading */
+.premium-underline {
+  width: 120px;
+  height: 3px;
+  margin: 0.8rem auto 1.8rem;
+  background: linear-gradient(90deg, #d4af37, #b8860b, #f5d97a);
+  border-radius: 3px;
+  position: relative;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+  animation: underlineGlow 4s ease-in-out infinite;
+}
+
+@keyframes underlineGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 1);
+  }
+}
+
+
+.featured-heading span {
+  color: #f5d97a;
+}
+
+.featured-sub {
+  text-align: center;
+  max-width: 680px;
+  margin: 0.5rem auto 3rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: "Poppins", sans-serif;
+}
+
+/* ============================= */
+/* Grid Layout */
+/* ============================= */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* ============================= */
+/* Card Styling */
+/* ============================= */
+.service-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.05);
+  transition: all 0.4s ease;
+  backdrop-filter: blur(6px);
+    opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s ease-out;
+}
+
+/* When in view */
+.service-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+}
+
+/* Image */
+.service-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-bottom: 2px solid rgba(255, 215, 0, 0.4);
+}
+
+/* ============================= */
+/* Sparkle Overlay Animation */
+/* ============================= */
+.sparkle-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.25), transparent 70%);
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.service-card:hover .sparkle-overlay {
+  opacity: 1;
+  animation: shimmerMove 6s linear infinite;
+}
+
+@keyframes shimmerMove {
+  0%, 100% { background-position: 0 0; }
+  50% { background-position: 100% 100%; }
+}
+
+/* ============================= */
+/* Card Content */
+/* ============================= */
+.service-content {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.service-content h3 {
+  font-size: 1.4rem;
+  font-family: "Playfair Display", serif;
+  color: #f5d97a;
+  margin-bottom: 0.5rem;
+}
+
+.service-content p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+}
+
+/* ============================= */
+/* Button */
+/* ============================= */
+.service-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #f5d97a, #b89028);
+  color: #000;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.service-btn:hover {
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  transform: scale(1.05);
+}
+
+/* ============================= */
+/* Responsive */
+/* ============================= */
+@media (max-width: 768px) {
+  .service-img {
+    height: 200px;
+  }
+}
+
+
+

@@ -1,0 +1,102 @@
+/* Smooth scroll bar for mobile menu */
+@media (max-width: 768px) {
+  .mobile-menu::-webkit-scrollbar {
+    width: 6px;
+  }
+  .mobile-menu::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #d8b44a, #b38a1e);
+    border-radius: 10px;
+  }
+  .mobile-menu::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+.mobile-drawer {
+  backdrop-filter: blur(8px);
+}
+
+/* Smooth transition */
+.mobile-drawer {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out;
+}
+
+
+/* Luxury Search Bar Wrapper */
+.luxury-search-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Luxury Search Input */
+.luxury-search-input {
+  width: 360px;
+  padding: 12px 48px 12px 20px;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 215, 128, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 0 8px rgba(255, 215, 128, 0.1);
+  transition: all 0.4s ease-in-out;
+}
+
+/* Placeholder Styling */
+.luxury-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 300;
+  letter-spacing: 0.3px;
+}
+
+/* Hover & Focus Effects */
+.luxury-search-input:hover {
+  border-color: rgba(245, 200, 107, 0.4);
+  box-shadow: 0 0 8px rgba(245, 200, 107, 0.3);
+}
+
+.luxury-search-input:focus {
+  border-color: #f5c86b;
+  box-shadow: 0 0 18px rgba(245, 200, 107, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Search Icon */
+.luxury-search-wrapper svg {
+  transition: all 0.3s ease;
+}
+
+.luxury-search-wrapper svg:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 1024px) {
+  .luxury-search-input {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .luxury-search-input {
+    width: 100%;
+  }
+}
+
