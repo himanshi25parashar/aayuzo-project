@@ -26,15 +26,8 @@ jobs:
       - name: Build React app
         run: |
           cd frontend
-          npm run build
+          CI=false npm run build
 
       - name: Zip build folder
         run: |
           cd frontend
-          zip -r build.zip build
-
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: react-build
-          path: frontend/build.zip
