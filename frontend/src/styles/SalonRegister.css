@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap");
+
+.salon-register-section {
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7rem 1.5rem 4rem;
+  overflow: hidden;
+}
+
+/* Overlay */
+.salon-overlay {
+  position: absolute;
+  inset: 0;
+  /* background: rgba(10, 10, 10, 0.8); */
+  z-index: 0;
+}
+
+/* Glow */
+.gold-glow {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(245, 200, 107, 0.15), transparent 70%);
+  filter: blur(100px);
+  animation: slowGlow 10s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes slowGlow {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+/* Container */
+.salon-register-container {
+  position: relative;
+  z-index: 2;
+  max-width: 480px;
+  width: 100%;
+  background: rgba(20, 20, 20, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 200, 107, 0.2);
+  border-radius: 18px;
+  padding: 3rem 2rem;
+  box-shadow: 0 0 25px rgba(245, 200, 107, 0.1);
+  text-align: center;
+}
+
+/* Title */
+.register-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  color: #f5c86b;
+  margin-bottom: 0.75rem;
+}
+
+.register-title span {
+  background: linear-gradient(90deg, #f9e8a3, #f5c86b, #d89b28);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.register-sub {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 2rem;
+}
+
+/* Inputs */
+.salon-form input {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.9rem 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(245, 200, 107, 0.25);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.salon-form input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.salon-form input:focus {
+  border-color: #f5c86b;
+  box-shadow: 0 0 10px rgba(245, 200, 107, 0.2);
+}
+
+/* Button */
+.register-btn {
+  width: 100%;
+  padding: 0.9rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #f9e8a3, #f5c86b, #d89b28);
+  border: none;
+  border-radius: 12px;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.register-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(245, 200, 107, 0.3);
+}
+
+/* Login link */
+.login-link {
+  margin-top: 1.5rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+}
+
+.login-anchor {
+  color: #f5c86b;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-anchor:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .salon-register-container {
+    padding: 2.2rem 1.5rem;
+  }
+
+  .register-title {
+    font-size: 1.9rem;
+  }
+
+  .salon-register-section {
+    padding-top: 6rem;
+  }
+}
+
+/* ============================== */
+/* TOGGLE SWITCH - GOLDEN EDITION */
+/* ============================== */
+
+.login-toggle-container {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+/* Switch */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 54px;
+  height: 28px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider Base */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: linear-gradient(90deg, #3a2f0e, #7a651d);
+  border-radius: 34px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 8px rgba(245, 200, 107, 0.1);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background: #fff8e1;
+  border-radius: 50%;
+  transition: all 0.4s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* When toggled ON (golden glowing state) */
+.toggle-switch input:checked + .slider {
+  background: linear-gradient(90deg, #f9e8a3, #f5c86b, #d89b28);
+  box-shadow: 0 0 15px rgba(245, 200, 107, 0.5);
+}
+
+.toggle-switch input:checked + .slider::before {
+  transform: translateX(26px);
+  background-color: #000;
+}
+
+/* Label text */
+.toggle-text {
+  font-weight: 500;
+  color: #f5c86b;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .login-toggle-container {
+    font-size: 0.85rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+

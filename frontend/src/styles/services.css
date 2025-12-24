@@ -1,0 +1,286 @@
+.services-section {
+  background: radial-gradient(circle at top left, #0b0b0b, #000);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  padding: 7rem 1.5rem 5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Hero */
+.services-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  background: linear-gradient(90deg, #f9e8a3, #f5c86b, #d89b28);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+.services-sub {
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  line-height: 1.6;
+}
+
+/* Bubble */
+.service-bubble {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  background: radial-gradient(circle at top left, #1a1209, #0b0b0b);
+  border: 2px solid rgba(245, 200, 107, 0.25);
+  box-shadow: 0 0 25px rgba(245, 200, 107, 0.15);
+  overflow: hidden;
+  margin: auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bubble-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.bubble-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.service-bubble:hover .bubble-image {
+  transform: scale(1.1);
+}
+.bubble-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.85);
+  opacity: 0;
+  transition: all 0.4s ease;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.service-bubble:hover .bubble-overlay {
+  opacity: 1;
+}
+.bubble-overlay h3 {
+  color: #f5c86b;
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+.bubble-overlay p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 1rem;
+}
+.bubble-link {
+  color: #f5c86b;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Modal */
+.service-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.service-modal-content {
+  background: rgba(20, 20, 20, 0.95);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(245, 200, 107, 0.25);
+  text-align: center;
+  max-width: 400px;
+  color: #fff;
+  box-shadow: 0 0 25px rgba(245, 200, 107, 0.2);
+}
+.service-modal-content img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: #f5c86b;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.modal-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #f5c86b;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* CTA */
+.services-cta {
+  margin-top: 5rem;
+}
+.cta-btn {
+  background: linear-gradient(90deg, #f9e8a3, #f5c86b, #d89b28);
+  color: #000;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(245, 200, 107, 0.3);
+}
+
+/* Swiper Pagination */
+.swiper-pagination-bullet {
+  background: #f5c86b !important;
+  opacity: 0.6;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+/* ============================= */
+/* FIX: Swiper Pagination Dots   */
+/* ============================= */
+
+.serviceSwiper {
+  padding-bottom: 3rem; /* gives extra bottom space for dots */
+  position: relative;
+}
+
+.serviceSwiper .swiper-pagination {
+  bottom: -30px !important; /* move dots further below the slider */
+  text-align: center;
+}
+
+.serviceSwiper .swiper-pagination-bullet {
+  background: linear-gradient(90deg, #f5c86b, #d89b28);
+  opacity: 0.6;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px !important;
+  transition: all 0.3s ease;
+}
+
+.serviceSwiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(245, 200, 107, 0.5);
+}
+
+/* Adjust spacing for mobile */
+@media (max-width: 768px) {
+  .serviceSwiper {
+    padding-bottom: 3.5rem;
+  }
+
+  .serviceSwiper .swiper-pagination {
+    bottom: -35px !important;
+  }
+}
+
+/* CTA Section */
+.services-cta {
+  text-align: center;
+  margin-top: 5rem; /* added more space from slider */
+  padding-top: 3rem;
+  position: relative;
+  z-index: 5;
+}
+
+.services-cta h3 {
+  font-family: "Playfair Display", serif;
+  color: #f5c86b;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  margin-bottom: 1.5rem; /* added spacing below the heading */
+  line-height: 1.4;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #f9e8a3, #f5c86b, #d89b28);
+  color: #000;
+  padding: 0.9rem 2.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(245, 200, 107, 0.3);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .services-cta {
+    margin-top: 4rem;
+    padding-top: 2rem;
+  }
+
+  .services-cta h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .cta-btn {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.8rem;
+  }
+}
+
+/* Service Item Wrapper */
+.service-item {
+  text-align: center;
+  position: relative;
+  margin-top: 1rem;
+}
+
+/* Service Name Below Circle */
+.service-name {
+  font-family: "Playfair Display", serif;
+  color: #f5c86b;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-top: 1rem;
+  letter-spacing: 0.3px;
+  text-shadow: 0 0 10px rgba(245, 200, 107, 0.25);
+  transition: all 0.3s ease;
+}
+
+.service-name:hover {
+  color: #ffe28c;
+  transform: translateY(-2px);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .service-name {
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+  }
+}
+
+

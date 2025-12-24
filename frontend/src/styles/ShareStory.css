@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap");
+
+.story-section {
+  position: relative;
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #0b0b0b, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 1rem 4rem;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+.golden-glow {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(245, 200, 107, 0.15), transparent 70%);
+  filter: blur(120px);
+  z-index: 0;
+}
+
+.story-container {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+  width: 100%;
+  background: rgba(20, 20, 20, 0.75);
+  border: 1px solid rgba(245, 200, 107, 0.25);
+  border-radius: 18px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(245, 200, 107, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.story-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.3rem;
+  background: linear-gradient(90deg, #f9e8a3, #f5c86b, #d89b28);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.story-sub {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.story-form input,
+.story-form select,
+.story-form textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.9rem 1.1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(245, 200, 107, 0.25);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.story-form input:focus,
+.story-form select:focus,
+.story-form textarea:focus {
+  border-color: #f5c86b;
+  box-shadow: 0 0 10px rgba(245, 200, 107, 0.3);
+}
+
+.story-form textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+/* Custom Dropdown */
+/* Profession & Experience Dropdown - Aayuzo Luxury Fix */
+.story-form select {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.95rem;
+  border: 1px solid rgba(245, 200, 107, 0.25);
+  border-radius: 10px;
+  color: #fefefe;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+
+  /* Custom dropdown arrow */
+  background-image: linear-gradient(45deg, transparent 50%, #f5c86b 50%),
+    linear-gradient(135deg, #f5c86b 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(1.2em + 2px),
+    calc(100% - 13px) calc(1.2em + 2px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  appearance: none; /* Remove default arrow */
+}
+
+.story-form select:hover,
+.story-form select:focus {
+  border-color: #f5c86b;
+  box-shadow: 0 0 10px rgba(245, 200, 107, 0.25);
+}
+
+/* Dropdown options */
+.story-form option {
+  background-color: #0b0b0b;
+  color: #f8f8f8;
+  font-weight: 400;
+  padding: 0.6rem;
+  border: none;
+}
+
+/* Safari/iOS Fix */
+.story-form select:focus-visible {
+  background-color: rgba(255, 255, 255, 0.08);
+  outline: none;
+}
+
+
+/* Stars */
+.rating-group {
+  text-align: left;
+  margin-bottom: 1.2rem;
+}
+
+.rating-group label {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #f5c86b;
+  font-weight: 500;
+}
+
+.stars {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.star {
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.star.active {
+  color: #f5c86b;
+}
+
+/* File Upload */
+.file-upload label {
+  display: block;
+  color: #f5c86b;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  text-align: left;
+}
+
+.file-upload input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px dashed rgba(245, 200, 107, 0.25);
+  border-radius: 10px;
+  padding: 0.8rem;
+  color: #ccc;
+  cursor: pointer;
+}
+
+/* Submit Button */
+.story-btn {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(90deg, #f9e8a3, #f5c86b, #d89b28);
+  border: none;
+  border-radius: 12px;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.story-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(245, 200, 107, 0.3);
+}
+
+/* Thank You Message */
+.thankyou-message {
+  margin-top: 1.5rem;
+  color: #f5c86b;
+}
+
+.sparkle {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-left: 6px;
+  background: radial-gradient(circle, #f5c86b 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse 2s infinite alternate ease-in-out;
+}
+
+@keyframes pulse {
+  from { transform: scale(0.9); opacity: 0.6; }
+  to { transform: scale(1.3); opacity: 1; }
+}
+
+.file-upload {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.file-upload label {
+  display: block;
+  color: #f5c86b;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
+
+.file-upload label span {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.upload-hint {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.file-upload input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px dashed rgba(245, 200, 107, 0.25);
+  border-radius: 10px;
+  padding: 0.8rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.file-upload input:hover {
+  border-color: #f5c86b;
+  box-shadow: 0 0 10px rgba(245, 200, 107, 0.25);
+}
+

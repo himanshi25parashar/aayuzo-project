@@ -1,0 +1,94 @@
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Luxury Heading */
+.luxury-heading {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: clamp(34px, 5vw, 68px);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+
+  background: linear-gradient(90deg, #f9e8a3, #f5c86b, #d89b28);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  text-shadow: 0 4px 10px rgba(0,0,0,0.55);
+  letter-spacing: 0.5px;
+}
+
+/* Subheading */
+.luxury-sub {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: clamp(14px, 1.4vw, 20px);
+  color: rgba(255,255,255,0.9);
+  margin: 0 auto;
+  max-width: 750px;
+  line-height: 1.6;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* Decorative underline */
+.hero-underline {
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(to right, #f5c86b, #d89b28);
+  margin: 20px auto 0;
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+
+/* Gradient text button */
+.luxury-btn {
+  background: linear-gradient(90deg, #c9a646, #f5e6c4);
+  transition: all 0.3s ease;
+}
+
+.luxury-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+
+/* Smooth floating animation  image which is in banner*/
+@keyframes floatLeft {
+  0%, 100% {
+    transform: translateX(-5px) translateY(0);
+  }
+  50% {
+    transform: translateX(5px) translateY(-5px);
+  }
+}
+
+@keyframes floatRight {
+  0%, 100% {
+    transform: translateX(5px) translateY(0);
+  }
+  50% {
+    transform: translateX(-5px) translateY(-5px);
+  }
+}
+
+.animate-float-left {
+  animation: floatLeft 4s ease-in-out infinite;
+}
+
+.animate-float-right {
+  animation: floatRight 4s ease-in-out infinite;
+}
+
+
+
+
